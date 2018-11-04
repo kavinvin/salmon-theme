@@ -2,6 +2,7 @@ function fish_prompt
 
   set -l last_command_status $status
   set -l cwd (basename (prompt_pwd))
+  set -l vwd (basename "$VIRTUAL_ENV")
 
   set -l fish     "⋊>"
   set -l ahead    "↑"
@@ -60,7 +61,7 @@ function fish_prompt
 
   function venv_status --no-scope-shadowing
     if test $VIRTUAL_ENV
-      echo -n -s "("(basename $VIRTUAL_ENV)")"
+      echo -n -s "($vwd)"
     end
   end
 
