@@ -1,7 +1,3 @@
-# You can override some default options with config.fish:
-#
-set -g theme_short_path yes
-
 function fish_prompt
 
   set -l last_command_status $status
