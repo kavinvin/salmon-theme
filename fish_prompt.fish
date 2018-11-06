@@ -1,3 +1,5 @@
+set -gx fish_color_command green
+
 function fish_prompt
 
   set -l last_command_status $status
