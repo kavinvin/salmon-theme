@@ -4,12 +4,13 @@ function fish_prompt
   set -l cwd (basename (prompt_pwd))
   set -l vwd (basename "$VIRTUAL_ENV")
 
-  set -l fish     "⋊>"
-  set -l ahead    "↑"
-  set -l behind   "↓"
-  set -l diverged "⥄ "
-  set -l dirty    "⨯"
-  set -l none     ""
+  set -l fish         "⋊>"
+  set -l flipped_fish "<⋉"
+  set -l ahead        "(ahead)"
+  set -l behind       "(behind)"
+  set -l diverged     "(diverged)"
+  set -l dirty        "(dirty)"
+  set -l none         ""
 
   set -l blue 66B3FF
   set -l red FF8080
@@ -55,7 +56,7 @@ function fish_prompt
     if test $last_command_status -eq 0
       echo -n -s $success_color $fish $normal_color
     else
-      echo -n -s $error_color $fish $normal_color
+      echo -n -s $success_color $flipped_fish $normal_color
     end
   end
 
