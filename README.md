@@ -25,4 +25,4 @@ $ omf theme salmon-theme
 
 ## Screenshot
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/kavinvin/salmon-theme/blob/01a7971b8e184398ed346148ce93a0e9bfbf3c2d/screenshot.png)
