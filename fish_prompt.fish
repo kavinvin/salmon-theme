@@ -1,5 +1,3 @@
-set -gx fish_color_command green
-
 function fish_prompt
 
   set -l last_command_status $status
@@ -26,7 +24,8 @@ function fish_prompt
   set -l directory_color  (set_color $yellow)
   set -l repository_color (set_color $blue)
 
-  set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
+  set -gx LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
+  set -gx fish_color_command green
 
   function username --no-scope-shadowing
     echo -n -s $username_color $USER $normal_color
