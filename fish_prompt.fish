@@ -26,6 +26,8 @@ function fish_prompt
 
   set -gx LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
   set -gx fish_color_command green
+  set -gx fish_color_error red
+  set -gx fish_color_param yellow
 
   function username --no-scope-shadowing
     echo -n -s $username_color $USER $normal_color
@@ -49,7 +51,7 @@ function fish_prompt
 
   function git_prompt --no-scope-shadowing
     if git_is_repo
-      echo -n on (git_repository) (git_status) 
+      echo -n on (git_repository) (git_status)
     end
   end
 
