@@ -12,10 +12,10 @@ function fish_prompt
   set -l dirty      "(dirty)"
   set -l none       ""
 
-  set -l blue 66B3FF
-  set -l red FF8080
-  set -l pink FF9999
-  set -l yellow FFE666
+  set -l blue 8be9fd
+  set -l red ff8888
+  set -l pink ff89d6
+  set -l yellow f1fa8c
 
   set -l normal_color     (set_color normal)
   set -l success_color    (set_color cyan)
