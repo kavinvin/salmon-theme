@@ -21,6 +21,7 @@ function fish_prompt
   set -l success_color    (set_color cyan)
   set -l error_color      (set_color red)
   set -l username_color   (set_color $red)
+  set -l hostname_color   (set_color white)
   set -l directory_color  (set_color $yellow)
   set -l repository_color (set_color $blue)
 
@@ -31,6 +32,14 @@ function fish_prompt
 
   function username --no-scope-shadowing
     echo -n -s $username_color $USER $normal_color
+  end
+
+  function machine --no-scope-shadowing
+	if test $SSH_CLIENT
+	  echo -n -s $hostname_color @(hostname) $normal_color
+	else
+	  echo -s -s ""
+	end
   end
 
   function directory --no-scope-shadowing
@@ -69,6 +78,6 @@ function fish_prompt
     end
   end
 
-  echo -n (venv_status) (username) in (directory) (git_prompt) (fish_status) ""
+  echo -n (venv_status) (username)(machine) in (directory) (git_prompt) (fish_status) ""
 
 end
