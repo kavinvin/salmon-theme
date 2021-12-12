@@ -4,8 +4,8 @@ function fish_prompt
   set -l cwd (basename (prompt_pwd))
   set -l vwd (basename "$VIRTUAL_ENV")
 
-  set -l fish       "⋊>"
-  set -l dead_fish  "<⋉"
+  set -l live_fish  "$"
+  set -l dead_fish  "$"
   set -l ahead      "(ahead)"
   set -l behind     "(behind)"
   set -l diverged   "(diverged)"
@@ -66,9 +66,9 @@ function fish_prompt
 
   function fish_status --no-scope-shadowing
     if test $last_command_status -eq 0
-      echo -n -s $success_color $fish $normal_color
+      echo -n -s $success_color $live_fish $normal_color
     else
-      echo -n -s $success_color $dead_fish $normal_color
+      echo -n -s $error_color $dead_fish $normal_color
     end
   end
 
