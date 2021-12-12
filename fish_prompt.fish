@@ -4,8 +4,8 @@ function fish_prompt
   set -l cwd (basename (prompt_pwd))
   set -l vwd (basename "$VIRTUAL_ENV")
 
-  set -l live_fish  "$"
-  set -l dead_fish  "$"
+  set -l live_fish  "\$"
+  set -l dead_fish  "\$"
   set -l ahead      "(ahead)"
   set -l behind     "(behind)"
   set -l diverged   "(diverged)"
